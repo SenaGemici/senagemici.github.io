@@ -1,0 +1,14 @@
+<div class="navbar bg-base-100 shadow-sm">
+  <div class="flex-1">
+    <a class="btn btn-ghost text-xl">{{ site.title }}</a>
+  </div>
+  <div class="flex-none">
+    <ul class="menu menu-horizontal px-1">
+        {% for item in site.data.navigation %}
+            <li {% if page.url == item.link %}class="text-primary"{% endif %}>
+                <a href="{{ item.link }}">{{ item.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+  </div>
+</div>
